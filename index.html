@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ilmusli</title>
-<script>try{var _d=document.documentElement;if(localStorage.getItem('ilm-theme')==='dark')_d.setAttribute('data-theme','dark');var _l=localStorage.getItem('ilm-lang');if(_l==='ar'){_d.lang='ar';_d.dir='rtl'}else if(_l==='fr')_d.lang='fr'}catch(e){}</script>
+<script>try{var _d=document.documentElement;var _t=localStorage.getItem('ilm-theme2');if(!_t&&localStorage.getItem('ilm-theme')==='dark')_t='night';if(_t==='night'||_t==='dark')_d.setAttribute('data-theme',_t);var _l=localStorage.getItem('ilm-lang');if(_l==='ar'){_d.lang='ar';_d.dir='rtl'}else if(_l==='fr')_d.lang='fr'}catch(e){}</script>
 <style id="pw-css">
 html.pw-locked,html.pw-locked body{overflow:hidden!important;height:100%}
 html.pw-locked body>*:not(#pw){display:none!important}
@@ -317,22 +317,23 @@ footer .fl{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}footer .f
 .seg button+button{border-inline-start:1px solid var(--line)}
 .seg button[aria-pressed=true]{background:var(--text);color:var(--bg)}
 .seg svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-html[data-theme=dark]{color-scheme:dark;--bg:#0c0c0d;--panel:#151517;--line:#2c2c30;--text:#f2f2f4;--muted:#9b9ba3}
-html[data-theme=dark] nav.drawer,html[data-theme=dark] #lbox{background:var(--bg)}
-html[data-theme=dark] :is(.page p,.vi .vt,.pd p.d,.who .ad2){color:#c9c9ce}
-html[data-theme=dark] .btn.solid:hover{background:#d9d9de}
-html[data-theme=dark] .acts .ci b{background:var(--text);color:var(--bg)}
-html[data-theme=dark] :is(.err,.low,.ok.bad){color:#ff7b72}
-html[data-theme=dark] .ok.bad{border-color:#ff7b72}
-html[data-theme=dark] :is(.ph.art svg,#lbox .lbs svg){stroke:#e8e8ec;fill:rgba(255,255,255,.05)}
-html[data-theme=dark] :is(.ph.art svg .e,#lbox .lbs svg .e){fill:#e8e8ec}
-html[data-theme=dark] #cl select{background:var(--panel)!important;color:var(--text)}
-html[data-theme=dark] select option{background:var(--panel);color:var(--text)}
-html[data-theme=dark] .msg a{color:var(--text)!important}
-html[data-theme=dark] .logo .f{background:linear-gradient(110deg,#f4f4f6 0%,#8d8d95 22%,#dcdce0 40%,#6a6a72 52%,#ececf0 68%,#9a9aa2 85%,#f4f4f6 100%);background-size:250% 100%}
-html[data-theme=dark] .va svg polyline{stroke:#fff}
-html[data-theme=dark] .va svg circle{fill:var(--bg);stroke:#fff}
-html[data-theme=dark] .va svg circle[r="1"]{fill:#fff;stroke:none}
+html:is([data-theme=night],[data-theme=dark]){color-scheme:dark;--bg:#0c0c0d;--panel:#151517;--line:#2c2c30;--text:#f2f2f4;--muted:#9b9ba3}
+html:is([data-theme=night],[data-theme=dark]) nav.drawer,html:is([data-theme=night],[data-theme=dark]) #lbox{background:var(--bg)}
+html:is([data-theme=night],[data-theme=dark]) :is(.page p,.vi .vt,.pd p.d,.who .ad2){color:#c9c9ce}
+html:is([data-theme=night],[data-theme=dark]) .btn.solid:hover{background:#d9d9de}
+html:is([data-theme=night],[data-theme=dark]) .acts .ci b{background:var(--text);color:var(--bg)}
+html:is([data-theme=night],[data-theme=dark]) :is(.err,.low,.ok.bad){color:#ff7b72}
+html:is([data-theme=night],[data-theme=dark]) .ok.bad{border-color:#ff7b72}
+html:is([data-theme=night],[data-theme=dark]) :is(.ph.art svg,#lbox .lbs svg){stroke:#e8e8ec;fill:rgba(255,255,255,.05)}
+html:is([data-theme=night],[data-theme=dark]) :is(.ph.art svg .e,#lbox .lbs svg .e){fill:#e8e8ec}
+html:is([data-theme=night],[data-theme=dark]) #cl select{background:var(--panel)!important;color:var(--text)}
+html:is([data-theme=night],[data-theme=dark]) select option{background:var(--panel);color:var(--text)}
+html:is([data-theme=night],[data-theme=dark]) .msg a{color:var(--text)!important}
+html:is([data-theme=night],[data-theme=dark]) .logo .f{background:linear-gradient(110deg,#f4f4f6 0%,#8d8d95 22%,#dcdce0 40%,#6a6a72 52%,#ececf0 68%,#9a9aa2 85%,#f4f4f6 100%);background-size:250% 100%}
+html:is([data-theme=night],[data-theme=dark]) .va svg polyline{stroke:#fff}
+html:is([data-theme=night],[data-theme=dark]) .va svg circle{fill:var(--bg);stroke:#fff}
+html:is([data-theme=night],[data-theme=dark]) .va svg circle[r="1"]{fill:#fff;stroke:none}
+html[data-theme=dark]{--bg:#000;--panel:#0a0a0a;--line:#1f1f22;--text:#f5f5f7;--muted:#9b9ba3}
 html[lang=ar]{--serif:-apple-system,"SF Arabic","SF Pro Text","Geeza Pro","Noto Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;--sans:var(--serif)}
 html[lang=ar] :is(body,button,input,textarea,select){font-family:var(--sans)}
 html[lang=ar] *{letter-spacing:0!important;text-transform:none!important}
@@ -488,7 +489,7 @@ fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":
 <div class="sr"><div><span class="sl">ILM CODE</span><b id="ilmc">—</b></div><button class="btn" type="button" id="ilmcp">COPY</button></div>
 <div class="sr"><div><span class="sl">FACE ID</span><span id="fidt">Off</span></div><button class="btn" type="button" id="fidb">ENABLE</button></div>
 <div class="sr"><div><span class="sl">LANGUAGE</span><span id="prefLv">English</span></div><div class="seg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ar" aria-pressed="false">عربي</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></div></div>
-<div class="sr"><div><span class="sl">APPEARANCE</span><span id="prefTv">Light</span></div><div class="seg" role="group" aria-label="Appearance"><button type="button" data-th="light" aria-pressed="true" aria-label="Light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button type="button" data-th="dark" aria-pressed="false" aria-label="Dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button></div></div></div>
+<div class="sr"><div><span class="sl">APPEARANCE</span><span id="prefTv">Light Mode</span></div><div class="seg" role="group" aria-label="Appearance"><button type="button" data-th="light" aria-pressed="true" aria-label="Light Mode"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button type="button" data-th="night" aria-pressed="false" aria-label="Night Mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button><button type="button" data-th="dark" aria-pressed="false" aria-label="Dark Mode"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" style="fill:currentColor"/></svg></button></div></div></div>
 <div class="pb"><button class="btn" type="button" id="pedit">EDIT PROFILE</button><button class="btn" type="button" id="lout">LOGOUT</button></div>
 <div class="msg" id="pm" role="status"></div>
 <div style="margin-top:10px"><a class="btn" id="padm" href="#admin" style="display:none">ADMIN PANEL</a></div>
@@ -1116,67 +1117,63 @@ setTimeout(draw,100);setTimeout(draw,600);
 <script id="ilm-pref-js">(function(){
 var D=document.documentElement,LS=(function(){try{return window.localStorage}catch(e){return{setItem:function(){}}}})(),lang=(D.lang==='ar'||D.lang==='fr')?D.lang:'en',AT=['placeholder','aria-label','title'],AR={},FR={},FONT=0;
 `home|الرئيسية|Accueil
-all products|كل المنتجات|Tous les produits
-about|عنّنا|À propos
+all products|جميع المنتجات|Tous les produits
+about|من نحن|À propos
 archive|الأرشيف|Archives
-contacts|كلّمنا|Contact
-contact|كلّمنا|Contact
+contacts|تواصل معنا|Contact
+contact|تواصل معنا|Contact
 login|تسجيل الدخول|Connexion
 cart|السلة|Panier
 menu|القائمة|Menu
-profile|البروفايل|Profil
-opening in|هنفتح كمان|Ouverture dans
+profile|الملف الشخصي|Profil
+opening in|الافتتاح بعد|Ouverture dans
 gallery|المعرض|Galerie
 products|المنتجات|Produits
-instagram|إنستجرام|Instagram
+instagram|إنستغرام|Instagram
 management|الإدارة|Gestion
-shop the vault →|تسوّق من الخزنة ←|Découvrir le coffre →
-the vault →|الخزنة ←|Le coffre →
-search products|دوّر على منتج|Rechercher des produits
+shop the vault →|تسوّق The Vault ←|Découvrir The Vault →
+the vault →|The Vault ←|The Vault →
+search products|ابحث عن منتج|Rechercher des produits
 all|الكل|Tout
-on sale|عليها خصم|En promotion
+on sale|تخفيضات|En promotion
 collections|المجموعات|Collections
 collection|المجموعة|Collection
-t-shirts|تيشيرتات|T-shirts
-pants|بناطيل|Pantalons
-balaclava|بالاكلافا|Cagoule
-cap|كاب|Casquette
-others|حاجات تانية|Autres
-other|حاجة تانية|Autre
-no products match.|مفيش منتجات مطابقة.|Aucun produit correspondant.
-← all products|→ كل المنتجات|← Tous les produits
+others|أخرى|Autres
+other|أخرى|Autre
+no products match.|لا توجد منتجات مطابقة.|Aucun produit correspondant.
+← all products|→ جميع المنتجات|← Tous les produits
 quantity|الكمية|Quantité
 size|المقاس|Taille
 size guide|دليل المقاسات|Guide des tailles
-add to cart|ضيف للسلة|Ajouter au panier
-buy it now|اشتري دلوقتي|Acheter maintenant
-add to wishlist|ضيف للمفضلة|Ajouter aux favoris
+add to cart|أضف إلى السلة|Ajouter au panier
+buy it now|اشترِ الآن|Acheter maintenant
+add to wishlist|أضف إلى المفضلة|Ajouter aux favoris
 in your wishlist ✓|في المفضلة ✓|Dans vos favoris ✓
-sold out|خلصت|Épuisé
+sold out|نفدت الكمية|Épuisé
 price details|تفاصيل السعر|Détail du prix
 details|التفاصيل|Détails
 material|الخامة|Matière
 fit|القَصّة|Coupe
 care|العناية|Entretien
-follow the label|اتبع تعليمات الغسيل اللي على الليبل|Suivre l’étiquette
+follow the label|اتبع تعليمات العناية المدوّنة على البطاقة|Suivre l’étiquette
 total|الإجمالي|Total
-select a size first.|اختار المقاس الأول.|Choisissez d’abord une taille.
-added to your cart.|اتضافت للسلة.|Ajouté à votre panier.
-view cart|شوف السلة|Voir le panier
-your cart is empty.|السلة فاضية.|Votre panier est vide.
-shop all products|تسوّق كل المنتجات|Voir tous les produits
-remove|شيل|Retirer
-phone number|رقم الموبايل|Numéro de téléphone
-alternative phone number (optional)|رقم موبايل تاني (اختياري)|Autre numéro de téléphone (facultatif)
-email|الإيميل|E-mail
+select a size first.|يُرجى اختيار المقاس أولاً.|Choisissez d’abord une taille.
+added to your cart.|تمت الإضافة إلى السلة.|Ajouté à votre panier.
+view cart|عرض السلة|Voir le panier
+your cart is empty.|سلتك فارغة.|Votre panier est vide.
+shop all products|تسوّق جميع المنتجات|Voir tous les produits
+remove|إزالة|Retirer
+phone number|رقم الهاتف|Numéro de téléphone
+alternative phone number (optional)|رقم هاتف آخر (اختياري)|Autre numéro de téléphone (facultatif)
+email|البريد الإلكتروني|E-mail
 delivery address|عنوان التوصيل|Adresse de livraison
-order details (optional)|تفاصيل الأوردر (اختياري)|Détails de la commande (facultatif)
+order details (optional)|تفاصيل الطلب (اختياري)|Détails de la commande (facultatif)
 governorate|المحافظة|Gouvernorat
 area|المنطقة|Zone
-choose...|اختار...|Choisir...
-choose area...|اختار المنطقة...|Choisir la zone...
-choose governorate first|اختار المحافظة الأول|Choisissez d’abord le gouvernorat
-promo code|كود الخصم|Code promo
+choose...|اختر...|Choisir...
+choose area...|اختر المنطقة...|Choisir la zone...
+choose governorate first|اختر المحافظة أولاً|Choisissez d’abord le gouvernorat
+promo code|رمز الخصم|Code promo
 apply|تطبيق|Appliquer
 discounts|الخصومات|Réductions
 shipping|الشحن|Expédition
@@ -1185,79 +1182,144 @@ payment|الدفع|Paiement
 cash on delivery|الدفع عند الاستلام|Paiement à la livraison
 e-wallet|محفظة إلكترونية|Portefeuille électronique
 checkout|إتمام الشراء|Passer la commande
-street, building, floor, apartment|الشارع، العمارة، الدور، الشقة|Rue, immeuble, étage, appartement
-landmark, delivery time, notes for the courier|علامة مميزة، ميعاد التوصيل، ملاحظات للمندوب|Point de repère, heure de livraison, notes pour le livreur
-please log in to check out.|سجّل دخولك الأول عشان تكمّل الشراء.|Connectez-vous pour passer la commande.
-placing your order...|بنسجّل الأوردر بتاعك...|Enregistrement de votre commande...
-create account|اعمل حساب|Créer un compte
-create an account|اعمل حساب|Créer un compte
-i already have an account|عندي حساب أصلاً|J’ai déjà un compte
-email or ilm code|الإيميل أو كود ILM|E-mail ou code ILM
-password|الباسورد|Mot de passe
+street, building, floor, apartment|الشارع، المبنى، الطابق، الشقة|Rue, immeuble, étage, appartement
+landmark, delivery time, notes for the courier|علامة مميزة، وقت التوصيل، ملاحظات لمندوب التوصيل|Point de repère, heure de livraison, notes pour le livreur
+please log in to check out.|يُرجى تسجيل الدخول لإتمام الشراء.|Connectez-vous pour passer la commande.
+placing your order...|جارٍ تسجيل طلبك...|Enregistrement de votre commande...
+create account|إنشاء حساب|Créer un compte
+create an account|إنشاء حساب|Créer un compte
+i already have an account|لدي حساب بالفعل|J’ai déjà un compte
+email or ilm code|البريد الإلكتروني أو رمز ILM|E-mail ou code ILM
+password|كلمة المرور|Mot de passe
 name|الاسم|Nom
-login with face id|ادخل بـ Face ID|Se connecter avec Face ID
-forgot your password? contact|نسيت الباسورد؟ كلّم|Mot de passe oublié ? Contactez
-questions about an order, a size or a piece? send us a message and we will reply by email.|عندك سؤال عن أوردر أو مقاس أو قطعة؟ ابعتلنا رسالة وهنرد عليك على الإيميل.|Une question sur une commande, une taille ou une pièce ? Envoyez-nous un message et nous vous répondrons par e-mail.
+login with face id|الدخول عبر Face ID|Se connecter avec Face ID
+forgot your password? contact|هل نسيت كلمة المرور؟ تواصل مع|Mot de passe oublié ? Contactez
+questions about an order, a size or a piece? send us a message and we will reply by email.|هل لديك استفسار عن طلب أو مقاس أو قطعة؟ أرسل إلينا رسالة وسنردّ عليك عبر البريد الإلكتروني.|Une question sur une commande, une taille ou une pièce ? Envoyez-nous un message et nous vous répondrons par e-mail.
 message|الرسالة|Message
-send message|ابعت الرسالة|Envoyer le message
-message sent. we will reply by email.|رسالتك وصلتنا. هنرد عليك على الإيميل.|Message envoyé. Nous vous répondrons par e-mail.
+send message|إرسال الرسالة|Envoyer le message
+message sent. we will reply by email.|تم إرسال رسالتك. سنردّ عليك عبر البريد الإلكتروني.|Message envoyé. Nous vous répondrons par e-mail.
 height|الطول|Hauteur
 weight|الوزن|Poids
 member id|رقم العضوية|N° de membre
-ilm code|كود ILM|Code ILM
+ilm code|رمز ILM|Code ILM
 face id|Face ID|Face ID
-off|مقفول|Désactivé
-enable|فعّل|Activer
-turn off|اقفل|Désactiver
-on for this device|شغّال على الجهاز ده|Activé sur cet appareil
-copy|انسخ|Copier
-edit profile|عدّل البروفايل|Modifier le profil
+off|متوقف|Désactivé
+enable|تفعيل|Activer
+turn off|إيقاف|Désactiver
+on for this device|مفعّل على هذا الجهاز|Activé sur cet appareil
+copy|نسخ|Copier
+edit profile|تعديل الملف الشخصي|Modifier le profil
 logout|تسجيل الخروج|Déconnexion
 admin panel|لوحة الإدارة|Panneau d’administration
-pants size|مقاس البنطلون|Taille du pantalon
+pants size|مقاس البنطال|Taille du pantalon
 height (cm)|الطول (سم)|Hauteur (cm)
 weight (kg)|الوزن (كجم)|Poids (kg)
-save|احفظ|Enregistrer
+save|حفظ|Enregistrer
 cancel|إلغاء|Annuler
-no address yet|لسه مفيش عنوان|Aucune adresse pour le moment
-orders|الأوردرات|Commandes
+no address yet|لا يوجد عنوان بعد|Aucune adresse pour le moment
+orders|الطلبات|Commandes
 wishlist|المفضلة|Favoris
-points|النقط|Points
-pieces you order will collect here.|القطع اللي هتطلبها هتظهر هنا.|Les pièces que vous commandez apparaîtront ici.
-no orders yet.|لسه مفيش أوردرات.|Aucune commande pour le moment.
-pending|في الانتظار|En attente
-confirmed|اتأكد|Confirmée
-shipped|اتشحن|Expédiée
-delivered|اتسلّم|Livrée
-cancelled|اتلغى|Annulée
-order cancelled|الأوردر اتلغى|Commande annulée
-cancel order|الغي الأوردر|Annuler la commande
-request return|اطلب إرجاع|Demander un retour
-send return request|ابعت طلب الإرجاع|Envoyer la demande de retour
-wrong size|المقاس مش مناسب|Mauvaise taille
-not as expected|مش زي ما توقعت|Pas comme prévu
-defective or damaged|فيه عيب أو تالف|Défectueux ou endommagé
-wrong item received|استلمت منتج غلط|Mauvais article reçu
-tell us more (optional)|قولنا أكتر (اختياري)|Dites-nous en plus (facultatif)
-order placed|الأوردر اتسجّل|Commande enregistrée
-order|الأوردر|Commande
-my orders|أوردراتي|Mes commandes
-keep shopping|كمّل تسوّق|Continuer vos achats
+points|النقاط|Points
+pieces you order will collect here.|ستظهر هنا القطع التي تطلبها.|Les pièces que vous commandez apparaîtront ici.
+no orders yet.|لا توجد طلبات بعد.|Aucune commande pour le moment.
+pending|قيد الانتظار|En attente
+confirmed|مؤكَّد|Confirmée
+shipped|تم الشحن|Expédiée
+delivered|تم التسليم|Livrée
+cancelled|ملغي|Annulée
+order cancelled|تم إلغاء الطلب|Commande annulée
+cancel order|إلغاء الطلب|Annuler la commande
+request return|طلب إرجاع|Demander un retour
+send return request|إرسال طلب الإرجاع|Envoyer la demande de retour
+wrong size|المقاس غير مناسب|Mauvaise taille
+not as expected|لم تكن كما توقعت|Pas comme prévu
+defective or damaged|معيبة أو تالفة|Défectueux ou endommagé
+wrong item received|استلمت منتجًا خاطئًا|Mauvais article reçu
+tell us more (optional)|أخبرنا بالمزيد (اختياري)|Dites-nous en plus (facultatif)
+order placed|تم تسجيل الطلب|Commande enregistrée
+order|الطلب|Commande
+my orders|طلباتي|Mes commandes
+keep shopping|متابعة التسوّق|Continuer vos achats
 shop|تسوّق|Boutique
 privacy policy|سياسة الخصوصية|Politique de confidentialité
 terms & conditions|الشروط والأحكام|Conditions générales
-© 2026 ilmusli. all rights reserved.|© 2026 ilmusli. جميع الحقوق محفوظة.|© 2026 ilmusli. Tous droits réservés.
-from|من|À partir de
-since|من|Depuis
-made|الصنع|Fabrication
+© 2026 ilmusli. all rights reserved.|© 2026 إلمُسلي. جميع الحقوق محفوظة.|© 2026 ilmusli. Tous droits réservés.
+from|المنشأ|Origine
+since|منذ|Depuis
+made|الصناعة|Fabrication
 delivery|التوصيل|Livraison
-ilmusli designs tailored clothing. each piece is made in a small run and released on its own, never in a rush.|ilmusli بتصمّم هدوم مفصّلة. كل قطعة بتتعمل بكمية صغيرة وبتنزل لوحدها، من غير استعجال.|ilmusli conçoit des vêtements sur mesure. Chaque pièce est produite en petite série et sort seule, jamais dans la précipitation.
-egypt, where ilmusli is a registered brand.|مصر، البلد اللي ilmusli علامة تجارية مسجّلة فيها.|L’Égypte, où ilmusli est une marque déposée.
+ilmusli designs tailored clothing. each piece is made in a small run and released on its own, never in a rush.|تصمّم إلمُسلي ملابس مفصّلة على القياس. تُنتَج كل قطعة بكمية محدودة وتُطرح منفردةً، دون استعجال.|ilmusli conçoit des vêtements sur mesure. Chaque pièce est produite en petite série et sort seule, jamais dans la précipitation.
+egypt, where ilmusli is a registered brand.|مصر، حيث إلمُسلي علامة تجارية مسجّلة.|L’Égypte, où ilmusli est une marque déposée.
 language|اللغة|Langue
 appearance|المظهر|Apparence
-light|فاتح|Clair
-dark|غامق|Sombre`.split('\n').forEach(function(l){var p=l.split('|');AR[p[0]]=p[1];FR[p[0]]=p[2]});
-var RXS={ar:[[/^COLOR — (.+)$/,'اللون — $1'],[/^SIZE — (.+)$/,'المقاس — $1'],[/^Price × (\d+)$/,'السعر × $1'],[/^Discount \((\d+)%\)$/,'الخصم ($1%)'],[/^ONLY (\d+) LEFT$/,'فاضل $1 بس'],[/^Cancel available for (\d+)h more$/,'ينفع تلغي لمدة $1 س كمان'],[/^(\d+) ITEMS$/,'$1 قطع'],[/^You save (.+)$/,'وفّرت $1'],[/^(\d+)D\s+(\d+)H\s+(\d+)M\s+(\d+)S$/,'$1 ي  $2 س  $3 د  $4 ث']],
+ilmusli home|الصفحة الرئيسية لإلمُسلي|ilmusli, accueil
+previous|السابق|Précédent
+next|التالي|Suivant
+2022. every collection gets its own ilm code, counting up from ilm-001.|2022. تحمل كل مجموعة رمز ILM خاصًا بها، يتصاعد ابتداءً من ILM-001.|2022. Chaque collection reçoit son propre code ILM, en comptant à partir de ILM-001.
+small runs, finished by hand in egypt. when a piece sells out, we move on to the next one instead of restocking it.|إنتاج بكميات محدودة، تُنجَز لمساتها الأخيرة يدويًا في مصر. وعندما تنفد قطعة، ننتقل إلى التي تليها بدلًا من إعادة توفيرها.|Petites séries, finies à la main en Égypte. Lorsqu’une pièce est épuisée, nous passons à la suivante au lieu de la réapprovisionner.
+we deliver across egypt and you pay in cash when your order arrives. delivery usually takes a few days, and you can follow every order from your profile.|نوصّل إلى جميع أنحاء مصر، ويكون الدفع نقدًا عند استلام الطلب. يستغرق التوصيل عادةً بضعة أيام، ويمكنك متابعة كل طلب من ملفك الشخصي.|Nous livrons dans toute l’Égypte et vous payez en espèces à la réception de votre commande. La livraison prend généralement quelques jours, et vous pouvez suivre chaque commande depuis votre profil.
+wash cold and inside out, and dry in the shade. fabric lasts longer when it stays away from heat and harsh detergents.|يُغسل بالماء البارد مقلوبًا، ويُجفَّف في الظل. يدوم القماش مدة أطول عندما يبتعد عن الحرارة والمنظّفات القاسية.|Lavez à l’eau froide et à l’envers, puis laissez sécher à l’ombre. Le tissu dure plus longtemps loin de la chaleur et des détergents agressifs.
+relaxed, boxy and tailored shapes in heavy fabrics. check the size guide on every product page, or write to us if you are between sizes.|قصّات مريحة وواسعة ومفصّلة من أقمشة ثقيلة. راجع دليل المقاسات في صفحة كل منتج، أو راسلنا إن كنت بين مقاسين.|Des coupes amples, carrées et ajustées dans des tissus épais. Consultez le guide des tailles sur chaque page produit, ou écrivez-nous si vous hésitez entre deux tailles.
+folders|المجلدات|Dossiers
+admin|المسؤول|Admin
+not you? sign out of this device|لست أنت؟ سجّل الخروج من هذا الجهاز|Ce n’est pas vous ? Déconnectez-vous de cet appareil
+change picture|تغيير الصورة|Changer la photo
+default|افتراضي|Par défaut
+letter|حرف|Lettre
+ilmusli points|نقاط إلمُسلي|Points ilmusli
+ilmusli points:|نقاط إلمُسلي:|Points ilmusli :
+street, building, floor, apartment, city|الشارع، المبنى، الطابق، الشقة، المدينة|Rue, immeuble, étage, appartement, ville
+collect|البيانات التي نجمعها|Collecte
+use|الاستخدام|Utilisation
+share|المشاركة|Partage
+device|الجهاز|Appareil
+your rights|حقوقك|Vos droits
+prices|الأسعار|Prix
+returns|الإرجاع|Retours
+rights|الحقوق|Droits
+your name, email, phone numbers, delivery address, optional height, weight and sizes, and your orders and messages. passwords are handled by google firebase authentication and we never see them.|اسمك وبريدك الإلكتروني وأرقام هاتفك وعنوان التوصيل، وطولك ووزنك ومقاساتك (اختيارية)، وطلباتك ورسائلك. تتم معالجة كلمات المرور عبر خدمة Google Firebase Authentication ولا نطّلع عليها أبدًا.|Votre nom, votre e-mail, vos numéros de téléphone, votre adresse de livraison, votre taille, votre poids et vos mensurations (facultatif), ainsi que vos commandes et vos messages. Les mots de passe sont gérés par Google Firebase Authentication et nous ne les voyons jamais.
+to create your account, prepare and deliver your orders, handle cancellations and returns, suggest a size, and answer your messages. the full details of every order are emailed to our studio inbox so we can prepare it.|لإنشاء حسابك، وتجهيز طلباتك وتوصيلها، ومعالجة الإلغاءات والمرتجعات، واقتراح المقاس المناسب، والرد على رسائلك. تُرسَل تفاصيل كل طلب كاملةً إلى بريد الاستوديو الخاص بنا لنتمكّن من تجهيزه.|Pour créer votre compte, préparer et livrer vos commandes, gérer les annulations et les retours, suggérer une taille et répondre à vos messages. Le détail complet de chaque commande est envoyé par e-mail à la boîte de notre studio afin que nous puissions la préparer.
+couriers only get what they need to deliver (name, phone numbers and address). we use google firebase to store accounts and orders and an email service to forward order emails to us. we never sell your data.|لا يحصل مندوبو التوصيل إلا على ما يلزمهم للتسليم (الاسم وأرقام الهاتف والعنوان). نستخدم Google Firebase لتخزين الحسابات والطلبات، وخدمة بريد إلكتروني لإعادة توجيه رسائل الطلبات إلينا. ولا نبيع بياناتك أبدًا.|Les livreurs reçoivent uniquement ce dont ils ont besoin pour livrer (nom, numéros de téléphone et adresse). Nous utilisons Google Firebase pour stocker les comptes et les commandes, ainsi qu’un service d’e-mail pour nous transmettre les e-mails de commande. Nous ne vendons jamais vos données.
+your cart and sign-in state are kept on your device so the site can remember them.|تُحفَظ سلتك وحالة تسجيل دخولك على جهازك ليتذكّرها الموقع.|Votre panier et votre état de connexion sont conservés sur votre appareil afin que le site puisse s’en souvenir.
+you can ask to see, correct or delete your data at any time by writing to|يمكنك في أي وقت طلب الاطلاع على بياناتك أو تصحيحها أو حذفها بمراسلتنا على|Vous pouvez à tout moment demander à consulter, corriger ou supprimer vos données en écrivant à
+placing an order is a request to buy. we contact you to confirm it, and may cancel it if a piece is unavailable.|تقديم الطلب هو طلب للشراء. نتواصل معك لتأكيده، وقد نلغيه إذا لم تكن القطعة متوفرة.|Passer une commande constitue une demande d’achat. Nous vous contactons pour la confirmer et pouvons l’annuler si une pièce n’est pas disponible.
+all prices are in egp. the delivery fee depends on your governorate and grows with the distance from cairo. you see the final total before you check out.|جميع الأسعار بالجنيه المصري. تعتمد رسوم التوصيل على محافظتك وتزداد بزيادة المسافة عن القاهرة. ويظهر لك الإجمالي النهائي قبل إتمام الشراء.|Tous les prix sont en EGP. Les frais de livraison dépendent de votre gouvernorat et augmentent avec la distance depuis Le Caire. Vous voyez le total final avant de passer la commande.
+cash on delivery, instapay or e-wallet. transfers are confirmed once we verify the payment.|الدفع عند الاستلام، أو InstaPay، أو المحفظة الإلكترونية. تُؤكَّد التحويلات بعد التحقق من الدفع.|Paiement à la livraison, InstaPay ou portefeuille électronique. Les virements sont confirmés dès que nous vérifions le paiement.
+we deliver to every governorate in egypt. delivery usually takes a few days, and a little longer for far areas.|نوصّل إلى جميع محافظات مصر. يستغرق التوصيل عادةً بضعة أيام، ويطول قليلًا للمناطق البعيدة.|Nous livrons dans tous les gouvernorats d’Égypte. La livraison prend généralement quelques jours, un peu plus pour les zones éloignées.
+you can cancel an order from profile → orders during the first 24 hours, as long as it has not shipped. after that the option disappears.|يمكنك إلغاء الطلب من «الملف الشخصي ← الطلبات» خلال أول 24 ساعة، ما لم يكن قد شُحن. وبعد ذلك يختفي هذا الخيار.|Vous pouvez annuler une commande depuis Profil → Commandes pendant les 24 premières heures, tant qu’elle n’a pas été expédiée. Passé ce délai, l’option disparaît.
+request a return from profile → orders within 14 days of delivery. pieces must be unworn, unwashed and with their tags. you can follow the return request in your profile. refunds are issued after we receive and check the piece.|اطلب الإرجاع من «الملف الشخصي ← الطلبات» خلال 14 يومًا من التسليم. يجب أن تكون القطع غير ملبوسة وغير مغسولة ومعها بطاقاتها. ويمكنك متابعة طلب الإرجاع من ملفك الشخصي. يُردّ المبلغ بعد استلام القطعة وفحصها.|Demandez un retour depuis Profil → Commandes dans les 14 jours suivant la livraison. Les pièces doivent être non portées, non lavées et munies de leurs étiquettes. Vous pouvez suivre la demande de retour dans votre profil. Les remboursements sont effectués après réception et vérification de la pièce.
+all content on this site is the property of ilmusli and may not be copied without written permission.|جميع محتويات هذا الموقع ملك لإلمُسلي ولا يجوز نسخها دون إذن كتابي.|Tout le contenu de ce site est la propriété d’ilmusli et ne peut être copié sans autorisation écrite.
+ilmusli™ is a registered brand of egypt. all content on this site, including text, images and designs, is protected by copyright and may not be copied or reproduced without written permission.|إلمُسلي™ علامة تجارية مسجّلة في مصر. جميع محتويات هذا الموقع، بما فيها النصوص والصور والتصاميم، محمية بحقوق النشر ولا يجوز نسخها أو إعادة إنتاجها دون إذن كتابي.|ilmusli™ est une marque déposée en Égypte. Tout le contenu de ce site, y compris les textes, les images et les créations, est protégé par le droit d’auteur et ne peut être copié ni reproduit sans autorisation écrite.
+remove free piece|إزالة القطعة المجانية|Retirer la pièce offerte
+reach 1,000 points to get a free piece.|اجمع 1,000 نقطة لتحصل على قطعة مجانية.|Atteignez 1 000 points pour obtenir une pièce offerte.
+no order yet|لا يوجد طلب بعد|Aucune commande pour le moment
+under 60 kg|أقل من 60 كجم|moins de 60 kg
+85 kg and over|85 كجم فأكثر|85 kg et plus
+picked up|تم الاستلام|Récupérée
+alternative phone|هاتف آخر|Autre téléphone
+earn|اكسب|Gagnez
+1 point for every 10 egp, added when your order is delivered.|نقطة واحدة لكل 10 ج.م، تُضاف عند تسليم طلبك.|1 point pour 10 EGP, ajouté à la livraison de votre commande.
+not supported here|غير مدعوم هنا|Non pris en charge ici
+link copied|تم نسخ الرابط|Lien copié
+could not copy the link|تعذّر نسخ الرابط|Impossible de copier le lien
+not available yet|غير متاح بعد|Pas encore disponible
+could not copy|تعذّر النسخ|Impossible de copier
+save photo|حفظ الصورة|Enregistrer la photo
+default photo|الصورة الافتراضية|Photo par défaut
+standard avatar|صورة رمزية قياسية|Avatar standard
+first letter|الحرف الأول|Première lettre
+your initial on white|حرفك الأول على خلفية بيضاء|Votre initiale sur fond blanc
+choose from gallery|اختر من المعرض|Choisir dans la galerie
+pick a photo from your phone|اختر صورة من هاتفك|Choisissez une photo depuis votre téléphone
+qr code needs an internet connection|يتطلب رمز QR اتصالًا بالإنترنت|Le code QR nécessite une connexion Internet
+member id copied|تم نسخ رقم العضوية|Numéro de membre copié
+cancel this order?|هل تريد إلغاء هذا الطلب؟|Annuler cette commande ?
+loading...|جارٍ التحميل...|Chargement...
+ilmusli profile|الملف الشخصي في إلمُسلي|Profil ilmusli
+light mode|الوضع الفاتح|Mode clair
+night mode|الوضع الليلي|Mode nuit
+dark mode|الوضع الداكن|Mode sombre`.split('\n').forEach(function(l){var p=l.split('|');AR[p[0]]=p[1];FR[p[0]]=p[2]});
+var RXS={ar:[[/^COLOR — (.+)$/,'اللون — $1'],[/^SIZE — (.+)$/,'المقاس — $1'],[/^Price × (\d+)$/,'السعر × $1'],[/^Discount \((\d+)%\)$/,'الخصم ($1%)'],[/^ONLY (\d+) LEFT$/,'المتبقي $1 فقط'],[/^Cancel available for (\d+)h more$/,'يمكنك الإلغاء خلال $1 ساعة إضافية'],[/^(\d+) ITEMS$/,'$1 قطع'],[/^You save (.+)$/,'وفّرتَ $1'],[/^(\d+)D\s+(\d+)H\s+(\d+)M\s+(\d+)S$/,'$1 ي  $2 س  $3 د  $4 ث']],
 fr:[[/^COLOR — (.+)$/,'COULEUR — $1'],[/^SIZE — (.+)$/,'TAILLE — $1'],[/^Price × (\d+)$/,'Prix × $1'],[/^Discount \((\d+)%\)$/,'Remise ($1%)'],[/^ONLY (\d+) LEFT$/,'PLUS QUE $1'],[/^Cancel available for (\d+)h more$/,'Annulation possible encore $1 h'],[/^(\d+) ITEMS$/,'$1 ARTICLES'],[/^You save (.+)$/,'Vous économisez $1'],[/^(\d+)D\s+(\d+)H\s+(\d+)M\s+(\d+)S$/,'$1 j  $2 h  $3 min  $4 s']]};
 function tr(s){var m=/^(\s*)([\s\S]*?)(\s*)$/.exec(s),k=m[2];if(!k)return s;var DC=lang==='fr'?FR:AR,R=RXS[lang]||[],v=DC.hasOwnProperty(k.toLowerCase())?DC[k.toLowerCase()]:null;
 if(v==null)for(var i=0;i<R.length;i++)if(R[i][0].test(k)){v=k.replace(R[i][0],R[i][1]);break}
@@ -1274,17 +1336,17 @@ var l=r.querySelectorAll('[placeholder],[aria-label],[title]');for(var i=0;i<l.l
 var q=[],raf=0,mo=new MutationObserver(function(ms){q=q.concat(ms);if(!raf)raf=requestAnimationFrame(flush)});
 function obs(){mo.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:AT})}
 function flush(){raf=0;var ms=q;q=[];mo.disconnect();ms.forEach(function(m){if(m.type==='characterData')doText(m.target);else if(m.type==='attributes')doAttr(m.target,m.attributeName);else for(var i=0;i<m.addedNodes.length;i++){var n=m.addedNodes[i];if(n.nodeType===3||n.nodeType===1)scan(n)}});obs()}
-function theme(){return D.getAttribute('data-theme')==='dark'?'dark':'light'}
+function theme(){var t=D.getAttribute('data-theme');return t==='dark'||t==='night'?t:'light'}
 function sync(){var i,b=document.querySelectorAll('[data-lang]');for(i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',b[i].dataset.lang===lang);b=document.querySelectorAll('[data-th]');for(i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',b[i].dataset.th===theme());
-var a=document.getElementById('prefLv'),c=document.getElementById('prefTv');if(a)a.textContent=lang==='ar'?'العربية':lang==='fr'?'Français':'English';if(c)c.textContent=theme()==='dark'?'Dark':'Light'}
+var a=document.getElementById('prefLv'),c=document.getElementById('prefTv');if(a)a.textContent=lang==='ar'?'العربية':lang==='fr'?'Français':'English';if(c)c.textContent=({dark:'Dark Mode',night:'Night Mode',light:'Light Mode'})[theme()]}
 function setLang(l){lang=l;D.lang=l;D.dir=l==='ar'?'rtl':'ltr';try{LS.setItem('ilm-lang',l)}catch(e){}
 if(l==='ar'&&!FONT){FONT=1;var k=document.createElement('link');k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&display=swap';document.head.appendChild(k)}
 mo.disconnect();scan(document.body);obs();sync()}
-function setTheme(t){if(t==='dark')D.setAttribute('data-theme','dark');else D.removeAttribute('data-theme');try{LS.setItem('ilm-theme',t)}catch(e){}
-var m=document.querySelector('meta[name=theme-color]');if(!m){m=document.createElement('meta');m.name='theme-color';document.head.appendChild(m)}m.content=t==='dark'?'#0c0c0d':'#ffffff';sync()}
+function setTheme(t){if(t==='dark'||t==='night')D.setAttribute('data-theme',t);else{t='light';D.removeAttribute('data-theme')}try{LS.setItem('ilm-theme2',t)}catch(e){}
+var m=document.querySelector('meta[name=theme-color]');if(!m){m=document.createElement('meta');m.name='theme-color';document.head.appendChild(m)}m.content=t==='dark'?'#000000':t==='night'?'#0c0c0d':'#ffffff';sync()}
 document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-lang],[data-th]');if(!b)return;if(b.dataset.lang)setLang(b.dataset.lang);else setTheme(b.dataset.th)});
 if(lang==='ar'){FONT=1;var k=document.createElement('link');k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&display=swap';document.head.appendChild(k);scan(document.body)}
-obs();sync();if(theme()==='dark')setTheme('dark');
+obs();sync();if(theme()!=='light')setTheme(theme());
 })();</script>
 </body>
 </html>
