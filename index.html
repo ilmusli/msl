@@ -88,7 +88,12 @@ html:is([data-theme=night],[data-theme=dark]) #pw :is(.pw-nf button,.pw-go){back
 html:is([data-theme=night],[data-theme=dark]) #pw .pw-foot{border-top-color:var(--line)}
 html:is([data-theme=night],[data-theme=dark]) #pw .pw-seg button{color:#9b9ba3}
 html:is([data-theme=night],[data-theme=dark]) #pw .pw-seg button[aria-pressed=true]{background:var(--text);color:var(--bg)}
-</style>
+#pw .pw-solo{display:none}
+#pw.only>*{display:none!important}
+#pw.only>.pw-solo{display:flex!important;flex:1;align-items:center;justify-content:center;width:100%}
+#pw .pw-solo .pw-cd{margin:0;font-size:clamp(28px,9vw,56px);white-space:nowrap}
+html[lang=ar] #pw .pw-cd{white-space:normal;line-height:1.7}
+html[lang=ar] #pw .pw-solo .pw-cd{font-size:clamp(22px,7vw,40px);padding:0 16px}
 </style>
 </head>
 <body>
@@ -115,6 +120,7 @@ html:is([data-theme=night],[data-theme=dark]) #pw .pw-seg button[aria-pressed=tr
 </form>
 <div class="pw-foot"><p data-t="c1">© 2026 ilmusli. All rights reserved.</p><p class="pw-l" data-t="c2">ilmusli™ is a registered brand of Egypt. All content on this site, including text, images and designs, is protected by copyright and may not be copied or reproduced without written permission.</p></div>
 </div>
+<div class="pw-solo"><div class="pw-cd" id="pwCd2">--</div></div>
 </div>
 <script>
 (function(){
@@ -137,11 +143,12 @@ var lang=(D.lang==="ar"||D.lang==="fr")?D.lang:"en";
 var T={
 en:{k:"Opening soon",t:"Something new is on its way. Our first drop is almost here, and the doors open soon.",gn:"Get notified and receive <b>20% off + free delivery</b> on your order.",nb:"Notify me",open:"Enter using password",go:"Enter",c1:"© 2026 ilmusli. All rights reserved.",c2:"ilmusli™ is a registered brand of Egypt. All content on this site, including text, images and designs, is protected by copyright and may not be copied or reproduced without written permission.",em:"Your email",pw:"Password",show:"Show",hide:"Hide",bad:"Incorrect password. Please try again.",ok:"You're on the list. We'll email you when we open.",err:"Something went wrong. Please try again.",u:["D","H","M","S"]},
 fr:{k:"Ouverture bientôt",t:"Du nouveau arrive. Notre premier drop est presque là, et les portes ouvrent bientôt.",gn:"Soyez prévenu et recevez <b>20 % de réduction + livraison offerte</b> sur votre commande.",nb:"Me prévenir",open:"Entrer avec le mot de passe",go:"Entrer",c1:"© 2026 ilmusli. Tous droits réservés.",c2:"ilmusli™ est une marque déposée en Égypte. Tout le contenu de ce site, y compris les textes, les images et les créations, est protégé par le droit d’auteur et ne peut être copié ni reproduit sans autorisation écrite.",em:"Votre e-mail",pw:"Mot de passe",show:"Afficher",hide:"Masquer",bad:"Mot de passe incorrect. Veuillez réessayer.",ok:"Vous êtes sur la liste. Nous vous écrirons à l’ouverture.",err:"Une erreur est survenue. Veuillez réessayer.",u:["j","h","min","s"]},
-ar:{k:"هنفتح إن شاء الله قريبًا",t:"شيء جديد في الطريق. أول إصدار لنا قريب جدًا، وأبوابنا ستُفتح قريبًا.",gn:"اشترك ليصلك التنبيه واحصل على <b>خصم 20% + توصيل مجاني</b> على طلبك.",nb:"نبّهني",open:"الدخول بكلمة المرور",go:"دخول",c1:"© 2026 إلمُسلي. جميع الحقوق محفوظة.",c2:"إلمُسلي™ علامة تجارية مسجّلة في مصر. جميع محتويات هذا الموقع، بما في ذلك النصوص والصور والتصاميم، محمية بحقوق النشر ولا يجوز نسخها أو إعادة إنتاجها دون إذن كتابي.",em:"بريدك الإلكتروني",pw:"كلمة المرور",show:"إظهار",hide:"إخفاء",bad:"كلمة المرور غير صحيحة. حاول مرة أخرى.",ok:"تم تسجيلك في القائمة. سنراسلك عند الافتتاح.",err:"حدث خطأ ما. حاول مرة أخرى.",u:["ي","س","د","ث"]}};
+ar:{k:"هنفتح إن شاء الله قريبًا",t:"شيء جديد في الطريق. أول إصدار لنا قريب جدًا، وأبوابنا ستُفتح قريبًا.",gn:"اشترك ليصلك التنبيه واحصل على <b>خصم 20% + توصيل مجاني</b> على طلبك.",nb:"نبّهني",open:"الدخول بكلمة المرور",go:"دخول",c1:"© 2026 إلمُسلي. جميع الحقوق محفوظة.",c2:"إلمُسلي™ علامة تجارية مسجّلة في مصر. جميع محتويات هذا الموقع، بما في ذلك النصوص والصور والتصاميم، محمية بحقوق النشر ولا يجوز نسخها أو إعادة إنتاجها دون إذن كتابي.",em:"بريدك الإلكتروني",pw:"كلمة المرور",show:"إظهار",hide:"إخفاء",bad:"كلمة المرور غير صحيحة. حاول مرة أخرى.",ok:"تم تسجيلك في القائمة. سنراسلك عند الافتتاح.",err:"حدث خطأ ما. حاول مرة أخرى.",u:["يوم","ساعة","دقيقة","ثانية"]}};
 var inp=$("pwIn"),eye=$("pwEye"),box=$("pw"),msg=$("pwMsg");
+function toAr(x){return String(x).replace(/\d/g,function(d){return"٠١٢٣٤٥٦٧٨٩".charAt(d)}).replace(/%/g,"٪")}
 function theme(){var t=D.getAttribute("data-theme");return t==="dark"||t==="night"?t:"light"}
 function apply(){var d=T[lang],els=document.querySelectorAll("[data-t]"),i,k;
-for(i=0;i<els.length;i++){k=els[i].getAttribute("data-t");if(k==="show")continue;els[i].innerHTML=d[k]}
+for(i=0;i<els.length;i++){k=els[i].getAttribute("data-t");if(k==="show")continue;els[i].innerHTML=lang==="ar"?toAr(d[k]):d[k]}
 eye.textContent=inp.type==="password"?d.show:d.hide;
 $("pwEm").placeholder=d.em;$("pwEm").setAttribute("aria-label",d.em);inp.placeholder=d.pw;inp.setAttribute("aria-label",d.pw);
 var b=document.querySelectorAll("[data-lang]");for(i=0;i<b.length;i++)b[i].setAttribute("aria-pressed",b[i].dataset.lang===lang);
@@ -157,12 +164,11 @@ $("pwOpen").onclick=function(){box.classList.add("show");setTimeout(function(){i
 eye.onclick=function(){inp.type=inp.type==="password"?"text":"password";eye.textContent=inp.type==="password"?T[lang].show:T[lang].hide};
 inp.oninput=function(){box.classList.remove("err");msg.textContent=""};
 $("pwForm").onsubmit=function(e){e.preventDefault();
-if(sha256(inp.value)===PW_HASH){var go=function(){location.href=TARGET},stay=function(){box.classList.remove("show");inp.value="";msg.textContent=""};
-if(location.protocol==="file:"){go()}else{fetch(TARGET,{method:"HEAD",cache:"no-store"}).then(function(r){r.ok?go():stay()}).catch(stay)}}
+if(sha256(inp.value)===PW_HASH){box.classList.add("only");inp.value="";tick(true)}
 else{box.classList.remove("err");void box.offsetWidth;box.classList.add("err");msg.textContent=T[lang].bad;inp.select()}};
 var cdTimer;function tick(once){var el=$("pwCd"),w=$("pwCdw"),d=DROP-Date.now();if(d<=0){w.style.display="none";return}
 var s=Math.floor(d/1000),z=function(n){return("0"+n).slice(-2)},u=T[lang].u;
-el.textContent=Math.floor(s/86400)+u[0]+"  "+z(Math.floor(s%86400/3600))+u[1]+"  "+z(Math.floor(s%3600/60))+u[2]+"  "+z(s%60)+u[3];
+var dd=Math.floor(s/86400),hh=z(Math.floor(s%86400/3600)),mm=z(Math.floor(s%3600/60)),ss=z(s%60),txt;if(lang==="ar")txt=toAr(dd+" "+u[0]+"  "+hh+" "+u[1]+"  "+mm+" "+u[2]+"  "+ss+" "+u[3]);else txt=dd+u[0]+"  "+hh+u[1]+"  "+mm+u[2]+"  "+ss+u[3];el.textContent=txt;var e2=$("pwCd2");if(e2)e2.textContent=txt;
 if(!once){clearTimeout(cdTimer);cdTimer=setTimeout(tick,1000)}}
 $("pwNf").onsubmit=function(e){e.preventDefault();var em=$("pwEm"),m=$("pwNm"),b=this.querySelector("button");b.disabled=true;m.textContent="";
 fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({access_key:"e4b08d9b-fc55-422f-89ae-b8d2eb053a27",subject:"ilmusli: Notify me signup",from_name:"ilmusli",Email:em.value})}).then(function(r){return r.json()}).then(function(j){if(j.success===true||j.success==="true"){m.textContent=T[lang].ok;em.value=""}else m.textContent=T[lang].err;b.disabled=false}).catch(function(){m.textContent=T[lang].err;b.disabled=false})};
